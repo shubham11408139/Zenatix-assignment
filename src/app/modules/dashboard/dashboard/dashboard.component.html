@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row row-header">
+    <div class="col-md-12">
+      <div class="card shadow mb-5 rounded text-white bg-dark">
+        <div class="card-header">
+          <h6>Temp - Time plot for all devices</h6>
+        </div>
+        <div class="card-body bg-white">
+          <form>
+            <div class="row row-header">
+
+              <div class="offset-md-3 col-md-3">
+                <select class="form-control" (change)="onTypeChange($event)">
+                  <option value=''>Select Type</option>
+                  <option *ngFor="let type of uniqueDeviceType" value={{type}}>{{type}}</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <select class="form-control" (change)="onDeviceChange($event)">
+                  <option value=''>Select Device</option>
+                  <option *ngFor="let device of uniqueDeviceName" value={{device}}>{{device}}</option>
+                </select>
+              </div>
+            </div>
+            <app-echarts *ngIf="data.length>0" [data]='newdata'></app-echarts>
+          </form>
+          <br />
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row row-header">
+    <div class="col-md-12 col-sm-12">
+      <app-avg-tmp-hourly *ngIf="data.length>0" [data]='data'></app-avg-tmp-hourly>
+
+    </div>
+
+  </div>
+
+  <div class="row row-header">
+    <div class="col-md-12 col-sm-12">
+      <app-avg-temp *ngIf="data.length>0" [data]="avgTemp"></app-avg-temp>
+    </div>
+  </div>
+
+  <div class="row row-header">
+    <div class="col-md-12 col-sm-12">
+      <app-live-temp *ngIf="data.length>0" [data]="data"></app-live-temp>
+    </div>
+  </div>
+
+  <div class="row row-header">
+    <div class="col-md-12 col-sm-12">
+      <app-device-table *ngIf="data.length>0" [data]='deviceTable'></app-device-table>
+    </div>
+  </div>
+</div>

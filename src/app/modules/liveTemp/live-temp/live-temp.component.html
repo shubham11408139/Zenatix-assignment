@@ -1,0 +1,26 @@
+<div class="card shadow mb-5 rounded text-white bg-dark">
+    <div class="card-header">
+        <h6>Live Poll temp</h6>
+    </div>
+    <div class="card-body table-wrapper-scroll-y my-custom-scrollbar bg-white">
+        <table class="table striped bordered hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Device</th>
+                <th scope="col">Live Avg Temp</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of liveAvgTempData;let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{item.device_name}}</td>
+                <td>{{item. mean_reading}}</td>
+              </tr>
+          
+            </tbody>
+          </table>
+      
+    </div>
+</div>

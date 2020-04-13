@@ -1,0 +1,52 @@
+body {
+    background-color: #afafaf;
+    
+    z-index: 0; 
+}
+
+
+.row-header {
+    margin: 0px auto;
+    padding: 0px 0px; }
+    
+
+/* .carousel-inner {
+	height: 150px;
+}
+
+.carousel-caption {
+	top: 50%;
+} */
+
+.my-custom-scrollbar {
+	position: relative;
+	height: 200px;
+	overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+	display: block;
+}
+
+.row.display-flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.row.display-flex>[class*='col-'] {
+	display: flex;
+	flex-direction: column;
+}
+
+/* .carousel-control-next,
+.carousel-control-prev {
+	filter: invert(100%);
+}
+
+.carousel-indicators li {
+	background-color: black;
+}
+
+.carousel-item div p {
+	margin-left: -1px;
+} */

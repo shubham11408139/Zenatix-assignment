@@ -1,0 +1,29 @@
+
+   <div class="card shadow mb-5 rounded text-white bg-dark">
+    <div class="card-header">
+        <h6>Avg. Hourly Temp.</h6>
+    </div>
+    <div class="card-body bg-white">
+      <ul class="nav nav-pills">
+        <li class="nav-item" *ngFor="let time of avgtempData">
+          <a class="nav-link active mr-4" (click)="getData(time.timeinhrs)">{{time.timeinhrs}} - {{time.timeinhrs +1 }}</a>
+        </li>
+      </ul>
+      <hr>
+      <div class="container" >
+        <div class="row">
+          <div class="col-md-1" *ngFor="let data of originalData?.deviceName">
+            <span class="text-dark" style="font-size: small;"><b>{{data}}</b></span>
+          </div>
+         
+        </div>
+        <div class="row">
+          <div class="col-md-1" *ngFor="let data of originalData?.meanReading">
+            <span class="text-dark">{{data | number : '1.2-2'}}</span>
+          </div>
+        </div>
+      </div>
+      <div >
+      </div>  
+    </div>
+</div>
